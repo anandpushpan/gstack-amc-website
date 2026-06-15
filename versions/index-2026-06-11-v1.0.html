@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- ===== SEO: honest, valuation-led, no fabricated claims ===== -->
+  <title>What's a used car really worth? Check before you buy | AnalyzeMyCar</title>
+  <meta name="description" content="AnalyzeMyCar reads the factory build, full MOT and service history, and an AI condition check from photos, then tells you what a UK car is worth and what it will cost to put right. First full report free." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://analyzemycar.com/" />
+  <link rel="alternate" hreflang="en-gb" href="https://analyzemycar.com/" />
+  <link rel="alternate" hreflang="x-default" href="https://analyzemycar.com/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="AnalyzeMyCar" />
+  <meta property="og:locale" content="en_GB" />
+  <meta property="og:title" content="Know what a used car is really worth before you buy it" />
+  <meta property="og:description" content="Factory build, full service and MOT history, AI condition check and a grade-based valuation. First full report free." />
+  <meta property="og:url" content="https://analyzemycar.com/" />
+
+  <!--
+    ============================================================================
+    DRAFT homepage v1.0, built on the AnalyzeMyCar design system (Onest / Manrope /
+    IBM Plex Mono; blue-teal-lime brand gradient). Self-contained for preview.
+    Version history + audits + change logs live in this folder (see README.md).
+
+    v1.0 changes (from owner feedback, Presentation1.pdf):
+      • CTA text standardised ("Check a car"); free hook is explicit "first report".
+      • No em dashes anywhere.
+      • Gradient used once per fold, on the primary CTA / full-bleed section bg only.
+        Removed from number boxes, badges, borders, the hero-top bar.
+      • Solid CTAs inside gradient sections (fixes the green-line artifact).
+      • Credits expire 180 days after purchase (corrected from "never expire").
+
+    HONESTY GUARDRAILS (see README): no fabricated stats/reviews; no finance/
+    write-off/stolen claims until confirmed; first-report-free is real.
+    ============================================================================
+  -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@500;600;700;800&family=Manrope:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+  /* ===== Design tokens (from colors_and_type.css) ===== */
+  :root{
+    --brand-navy:#062E44; --brand-blue:#1A6CB0; --brand-blue-700:#125A98; --brand-blue-300:#7EB2D9;
+    --brand-teal:#2E8E84; --brand-green:#2F9D63; --brand-green-700:#1E7C4B; --brand-lime:#8DBE3C;
+    --brand-gradient:linear-gradient(90deg,#1A6CB0 0%,#2E8E84 48%,#8DBE3C 100%);
+    --brand-gradient-deep:linear-gradient(120deg,#062E44 0%,#125A98 45%,#2E8E84 100%);
+    --slate-950:#0B1A22;--slate-900:#14222B;--slate-800:#22333D;--slate-700:#3A4D58;--slate-600:#51646F;
+    --slate-500:#697C86;--slate-400:#8DA0A9;--slate-300:#BDCBD2;--slate-200:#DCE4E8;--slate-100:#EDF1F4;--slate-50:#F6F8FA;--white:#fff;
+    --success:#2F9D63;--success-bg:#E6F5EC;--success-fg:#1E7C4B;
+    --warning:#E0A12E;--warning-bg:#FBF1DC;--warning-fg:#9A6B12;
+    --danger:#D24B43;--danger-bg:#FBE8E7;--danger-fg:#A8312A;
+    --info:#1A6CB0;--info-bg:#E6F0F8;--info-fg:#125A98;
+    --fg1:var(--slate-900);--fg2:var(--slate-600);--fg3:var(--slate-400);--fg-onbrand:#fff;
+    --bg1:var(--white);--bg2:var(--slate-50);--bg3:var(--slate-100);--bg-navy:var(--brand-navy);
+    --border:var(--slate-200);--border-strong:var(--slate-300);--focus-ring:rgba(26,108,176,0.35);
+    --font-display:'Onest',system-ui,sans-serif;--font-sans:'Manrope',system-ui,sans-serif;--font-mono:'IBM Plex Mono',ui-monospace,monospace;
+    --r-xs:6px;--r-sm:8px;--r-md:12px;--r-lg:16px;--r-xl:24px;--r-pill:999px;
+    --shadow-xs:0 1px 2px rgba(6,46,68,.06);
+    --shadow-sm:0 1px 3px rgba(6,46,68,.08),0 1px 2px rgba(6,46,68,.04);
+    --shadow-md:0 4px 12px rgba(6,46,68,.08),0 2px 4px rgba(6,46,68,.04);
+    --shadow-lg:0 12px 28px rgba(6,46,68,.12),0 4px 10px rgba(6,46,68,.05);
+    --shadow-focus:0 0 0 4px var(--focus-ring);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:var(--font-sans);background:var(--bg1);color:var(--fg1);line-height:1.6;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{color:var(--brand-blue);text-decoration:none}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+  .ic{display:inline-flex;align-items:center;justify-content:center;vertical-align:middle}
+
+  /* ===== Buttons =====
+     Gradient is reserved for the single primary CTA in a fold. Inside gradient
+     sections, CTAs are solid (btn-white / btn-ghost-light). No gradient borders. */
+  .btn{font-family:var(--font-sans);font-weight:600;font-size:14px;border-radius:var(--r-md);padding:11px 18px;border:1px solid transparent;cursor:pointer;display:inline-flex;align-items:center;gap:8px;line-height:1;transition:all .16s ease}
+  .btn:active{transform:scale(.98)}
+  .btn-primary{background:var(--brand-blue);color:#fff}
+  .btn-primary:hover{background:var(--brand-blue-700)}
+  .btn-grad{background:var(--brand-gradient);color:#fff}
+  .btn-grad:hover{filter:brightness(.96)}
+  .btn-secondary{background:#fff;color:var(--brand-blue);border-color:var(--border-strong)}
+  .btn-secondary:hover{border-color:var(--brand-blue);box-shadow:var(--shadow-sm)}
+  .btn-white{background:#fff;color:var(--brand-blue)}
+  .btn-white:hover{background:var(--slate-100)}
+  .btn-ghost-light{background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.3)}
+  .btn-ghost-light:hover{background:rgba(255,255,255,.2)}
+  .btn-lg{padding:15px 26px;font-size:16px}
+  .btn-block{width:100%;justify-content:center}
+
+  /* ===== Header ===== */
+  .hdr{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+  .hdr-in{display:flex;align-items:center;gap:28px;height:68px}
+  .hdr .logo{height:34px}
+  .nav{display:flex;gap:24px;margin-left:8px}
+  .nav a{font-size:14px;font-weight:500;color:var(--fg2)}
+  .nav a:hover{color:var(--brand-blue)}
+  .hdr-cta{margin-left:auto;display:flex;gap:12px;align-items:center}
+  .login{font-size:14px;font-weight:600;color:var(--fg1)}
+  .nav-toggle{display:none;background:none;border:0;flex-direction:column;gap:4px;cursor:pointer;padding:8px}
+  .nav-toggle span{width:22px;height:2px;background:var(--brand-navy);border-radius:2px}
+
+  /* ===== Hero ===== */
+  .hero{background:linear-gradient(180deg,#fff 0%,var(--bg2) 100%);position:relative;overflow:hidden}
+  .hero-in{padding:64px 0 76px;display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+  .eyebrow{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--brand-teal);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+  .hero h1{font-family:var(--font-display);font-weight:800;font-size:50px;line-height:1.05;letter-spacing:-.02em;margin:0 0 18px;color:var(--brand-navy)}
+  .hero h1 .g{color:var(--brand-green-700)}
+  .hero p.sub{font-size:18px;line-height:1.55;color:var(--fg2);max-width:520px;margin:0 0 22px}
+  .free-badge{display:inline-flex;align-items:center;gap:8px;background:var(--success-bg);color:var(--success-fg);font-weight:700;font-size:13px;padding:8px 14px;border-radius:var(--r-pill);margin-bottom:18px}
+  .free-badge .dot{width:8px;height:8px;border-radius:50%;background:var(--brand-green);box-shadow:0 0 0 4px rgba(47,157,99,.18)}
+  .trust-row{display:flex;gap:22px;margin-top:26px;flex-wrap:wrap}
+  .trust-row .t{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--fg2);font-weight:500}
+  .trust-row .t .ic{color:var(--brand-green)}
+
+  /* lookup card */
+  .lookup{background:#fff;border:1px solid var(--border);border-radius:var(--r-xl);box-shadow:var(--shadow-lg);padding:28px}
+  .lookup h3{font-family:var(--font-display);font-weight:700;font-size:20px;margin:0 0 4px}
+  .lookup .hint{font-size:13px;color:var(--fg2);margin:0 0 18px}
+  .toggle{display:flex;gap:6px;margin:0 0 16px;background:var(--bg3);border-radius:999px;padding:4px;width:fit-content}
+  .toggle button{border:0;background:transparent;font-family:var(--font-sans);font-weight:600;font-size:13px;padding:7px 16px;border-radius:999px;cursor:pointer;color:var(--fg2)}
+  .toggle button.on{background:#fff;color:var(--brand-blue);box-shadow:var(--shadow-xs)}
+  .plate{display:flex;border-radius:10px;overflow:hidden;box-shadow:var(--shadow-sm);border:1px solid var(--border-strong)}
+  .plate .gb{background:#012169;color:#fff;font-family:var(--font-display);font-weight:800;width:58px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:15px;line-height:1;gap:4px}
+  .plate .gb .uj{width:32px;height:19px;border-radius:2px;display:block}
+  .plate input{background:#f5c518;border:0;font-family:var(--font-mono);font-weight:700;font-size:30px;letter-spacing:.06em;text-transform:uppercase;color:#1a1a1a;text-align:center;flex:1;outline:none;padding:14px 8px;min-width:0}
+  .plate input::placeholder{color:#9a8410}
+  .vin-input{width:100%;font-family:var(--font-mono);font-size:16px;letter-spacing:.04em;padding:15px 14px;border:1px solid var(--border-strong);border-radius:10px;text-transform:uppercase;outline:none}
+  .vin-input:focus{border-color:var(--brand-blue);box-shadow:var(--shadow-focus)}
+  .reg-meta{display:flex;gap:14px;flex-wrap:wrap;margin-top:14px;justify-content:center}
+  .reg-meta span{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--fg2)}
+  .reg-meta .ic{color:var(--brand-green)}
+
+  /* ===== generic section ===== */
+  .section{padding:72px 0}
+  .section--soft{background:var(--bg2)}
+  .section h2{font-family:var(--font-display);font-weight:800;font-size:34px;letter-spacing:-.02em;text-align:center;margin:0 0 12px;color:var(--brand-navy)}
+  .section .lead{text-align:center;font-size:17px;color:var(--fg2);max-width:580px;margin:0 auto 44px}
+  .overline{font-family:var(--font-sans);font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--brand-teal);text-align:center;display:block;margin-bottom:10px}
+
+  /* ===== source/trust strip ===== */
+  .srcstrip{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:#fff}
+  .srcstrip .row{display:flex;gap:28px;justify-content:center;flex-wrap:wrap;padding:22px 0}
+  .srcstrip .s{display:flex;align-items:center;gap:9px;font-size:14px;color:var(--fg2);font-weight:500}
+  .srcstrip .s .ic{color:var(--brand-teal)}
+
+  /* ===== differentiator (the moat) ===== */
+  .moat-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+  .moat-copy h2{text-align:left;margin-bottom:16px}
+  .moat-copy p{font-size:17px;color:var(--fg2);margin:0 0 14px}
+  .moat-list{list-style:none;padding:0;margin:18px 0 0;display:flex;flex-direction:column;gap:12px}
+  .moat-list li{display:flex;gap:10px;align-items:flex-start;font-size:15px;color:var(--fg1)}
+  .moat-list .ic{color:var(--brand-green);margin-top:2px;flex:none}
+  .valcard{background:#fff;border:1px solid var(--border);border-radius:var(--r-xl);box-shadow:var(--shadow-lg);overflow:hidden}
+  .valcard .vc-top{background:var(--brand-navy);color:#fff;padding:20px 24px;display:flex;align-items:center;justify-content:space-between}
+  .valcard .vc-top .veh{font-family:var(--font-display);font-weight:700;font-size:16px}
+  .valcard .vc-top .grade{font-family:var(--font-display);font-weight:800;font-size:13px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);padding:5px 12px;border-radius:999px}
+  .valrow{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;border-bottom:1px solid var(--border)}
+  .valrow .lbl{font-size:14px;color:var(--fg2);display:flex;align-items:center;gap:8px}
+  .valrow .num{font-family:var(--font-mono);font-weight:600;font-size:20px;font-variant-numeric:tabular-nums}
+  .valrow .num.minus{color:var(--danger)}
+  .valrow.final{background:var(--success-bg);border-bottom:0}
+  .valrow.final .lbl{color:var(--success-fg);font-weight:700}
+  .valrow.final .num{color:var(--success-fg);font-size:26px}
+  .valnote{padding:14px 24px;font-size:12px;color:var(--fg3);background:var(--bg2);border-top:1px solid var(--border)}
+
+  /* ===== features ===== */
+  .feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .feat{background:#fff;border:1px solid var(--border);border-radius:var(--r-lg);padding:24px;box-shadow:var(--shadow-sm);transition:all .18s ease}
+  .feat:hover{box-shadow:var(--shadow-md);border-color:var(--border-strong);transform:translateY(-2px)}
+  .feat .fic{width:46px;height:46px;border-radius:12px;background:var(--info-bg);color:var(--brand-blue);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+  .feat.paid .fic{background:#F1ECFB;color:#6D4FB0}
+  .feat h4{font-family:var(--font-display);font-weight:700;font-size:17px;margin:0 0 6px}
+  .feat p{font-size:14px;line-height:1.5;color:var(--fg2);margin:0}
+  .feat .cr{font-family:var(--font-mono);font-size:12px;font-weight:600;color:var(--brand-teal);margin-top:14px;display:inline-block}
+  .feat .pill{font-size:10px;font-weight:700;letter-spacing:.04em;background:#F1ECFB;color:#6D4FB0;padding:3px 8px;border-radius:999px;margin-left:6px;text-transform:uppercase}
+
+  /* ===== steps ===== */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .step{padding:6px}
+  .step .num{width:40px;height:40px;border-radius:12px;background:var(--brand-blue);color:#fff;font-family:var(--font-display);font-weight:800;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+  .step h4{font-family:var(--font-display);font-weight:700;font-size:18px;margin:0 0 6px;color:var(--brand-navy)}
+  .step p{font-size:14px;color:var(--fg2);margin:0}
+
+  /* ===== dealer band (full-bleed gradient = this fold's single gradient) ===== */
+  .dealer{background:var(--brand-gradient-deep);color:#fff;border-radius:var(--r-xl);padding:44px;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+  .dealer h2{text-align:left;color:#fff;font-size:30px;margin:0 0 14px}
+  .dealer p{color:#cfe0ea;font-size:16px;margin:0 0 20px}
+  .dealer-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:12px}
+  .dealer-list li{display:flex;gap:10px;align-items:flex-start;font-size:15px;color:#eaf2f7}
+  .dealer-list .ic{color:var(--brand-lime);margin-top:2px;flex:none}
+  .dealer-cta{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}
+  .dealer .valcard .vc-top{background:rgba(255,255,255,.08)}
+
+  /* ===== pricing ===== */
+  .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:stretch}
+  .pcard{background:#fff;border:1px solid var(--border);border-radius:var(--r-xl);padding:28px;box-shadow:var(--shadow-sm);position:relative;display:flex;flex-direction:column}
+  .pcard.pop{border:2px solid var(--brand-blue);box-shadow:var(--shadow-lg)}
+  .ptag{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--brand-blue);color:#fff;font-size:11px;font-weight:700;padding:5px 14px;border-radius:999px;white-space:nowrap}
+  .pcard .pname{font-family:var(--font-display);font-weight:700;font-size:19px}
+  .pcard .pdesc{font-size:13px;color:var(--fg2);margin:4px 0 18px}
+  .pcard .pprice{font-family:var(--font-mono);font-weight:600;font-size:42px;color:var(--brand-navy);line-height:1}
+  .pcard .pprice .was{font-size:18px;color:var(--fg3);text-decoration:line-through;margin-right:8px;font-weight:400}
+  .pcard .pprice .vat{font-size:14px;color:var(--fg3);font-family:var(--font-sans)}
+  .pcard .punit{font-size:13px;color:var(--fg2);margin:8px 0 20px}
+  .pcard ul{list-style:none;padding:0;margin:0 0 24px;display:flex;flex-direction:column;gap:10px}
+  .pcard li{display:flex;align-items:center;gap:9px;font-size:14px;color:var(--fg1)}
+  .pcard li .ic{color:var(--brand-green);flex:none}
+  .pcard .btn{width:100%;justify-content:center;margin-top:auto}
+  .price-foot{display:flex;gap:28px;justify-content:center;margin-top:34px;flex-wrap:wrap}
+  .price-foot span{display:flex;align-items:center;gap:8px;font-size:14px;color:var(--fg2);font-weight:500}
+  .price-foot .ic{color:var(--brand-teal)}
+
+  /* ===== trust (honest) ===== */
+  .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:36px}
+  .trust-card{background:#fff;border:1px solid var(--border);border-radius:var(--r-lg);padding:22px;box-shadow:var(--shadow-xs)}
+  .trust-card .ic{color:var(--brand-teal);margin-bottom:12px}
+  .trust-card h4{font-family:var(--font-display);font-weight:700;font-size:15px;margin:0 0 6px;color:var(--brand-navy)}
+  .trust-card p{font-size:13px;color:var(--fg2);margin:0;line-height:1.5}
+  .reviews-honest{background:#fff;border:1px dashed var(--border-strong);border-radius:var(--r-lg);padding:30px;text-align:center;max-width:680px;margin:0 auto}
+  .reviews-honest .stars{color:var(--slate-300);font-size:22px;letter-spacing:3px}
+  .reviews-honest h4{font-family:var(--font-display);font-weight:700;font-size:18px;color:var(--brand-navy);margin:10px 0 8px}
+  .reviews-honest p{font-size:14px;color:var(--fg2);margin:0 auto;max-width:520px}
+
+  /* ===== FAQ ===== */
+  .faq{max-width:820px;margin:0 auto}
+  .faq details{border:1px solid var(--border);border-radius:var(--r-md);padding:0;margin-bottom:12px;background:#fff;overflow:hidden}
+  .faq summary{cursor:pointer;font-family:var(--font-display);font-weight:600;font-size:16px;color:var(--brand-navy);padding:18px 20px;list-style:none;display:flex;justify-content:space-between;align-items:center}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:'+';font-size:22px;color:var(--brand-teal);font-weight:400}
+  .faq details[open] summary::after{content:'\2212'}
+  .faq .faq-body{padding:0 20px 18px;font-size:15px;color:var(--fg2);line-height:1.6}
+
+  /* ===== CTA band (full-bleed gradient = this fold's single gradient) ===== */
+  .cta-band{background:var(--brand-gradient-deep);border-radius:var(--r-xl);padding:56px 40px;text-align:center;color:#fff}
+  .cta-band h2{color:#fff;font-size:32px;margin:0 0 12px}
+  .cta-band p{color:#cfe0ea;font-size:17px;margin:0 auto 26px;max-width:520px}
+
+  /* ===== footer ===== */
+  .ftr{background:var(--brand-navy);color:#cfe0ea;padding:56px 0 30px}
+  .ftr-in{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px}
+  .ftr-chip{background:#fff;border-radius:10px;padding:10px 14px;display:inline-flex;margin-bottom:16px}
+  .ftr-chip img{height:30px;display:block}
+  .ftr p{font-size:13px;line-height:1.6;color:#9fb8c6;max-width:280px}
+  .ftr h5{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:#fff;margin:0 0 14px}
+  .ftr ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:9px}
+  .ftr ul a{font-size:13px;color:#9fb8c6}
+  .ftr ul a:hover{color:#fff}
+  .ftr-social{display:flex;gap:12px;margin-top:18px}
+  .ftr-social span{width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;cursor:pointer;color:#cfe0ea;font-weight:700;font-size:13px;font-family:var(--font-display)}
+  .ftr-bot{border-top:1px solid rgba(255,255,255,.12);margin-top:40px;padding-top:22px;font-size:12px;color:#7d99a8;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+  /* ===== responsive ===== */
+  @media (max-width:900px){
+    .nav{display:none}
+    .nav-toggle{display:flex}
+    .hero-in{grid-template-columns:1fr;gap:36px;padding:48px 0 56px}
+    .hero h1{font-size:38px}
+    .moat-grid{grid-template-columns:1fr;gap:28px}
+    .moat-copy h2{text-align:center}
+    .feat-grid{grid-template-columns:1fr 1fr}
+    .steps{grid-template-columns:1fr}
+    .dealer{grid-template-columns:1fr;padding:32px}
+    .dealer h2{text-align:center;font-size:26px}
+    .price-grid{grid-template-columns:1fr}
+    .trust-grid{grid-template-columns:1fr 1fr}
+    .ftr-in{grid-template-columns:1fr 1fr;gap:30px}
+    .section h2{font-size:27px}
+  }
+  @media (max-width:560px){
+    .feat-grid,.trust-grid{grid-template-columns:1fr}
+    .ftr-in{grid-template-columns:1fr}
+  }
+  </style>
+</head>
+<body>
+
+  <!-- ============================ HEADER ============================ -->
+  <header class="hdr">
+    <div class="wrap hdr-in">
+      <a href="index.html"><img class="logo" src="assets/logo-full.png" alt="AnalyzeMyCar" /></a>
+      <nav class="nav">
+        <a href="index.html" style="color:var(--brand-blue);font-weight:600">Home</a>
+        <a href="#how">How it works</a>
+        <a href="#features">What's checked</a>
+        <a href="#dealers">For dealers</a>
+        <a href="#pricing">Pricing</a>
+      </nav>
+      <div class="hdr-cta">
+        <a class="login" href="#">Login</a>
+        <a class="btn btn-grad" href="#check"><i data-lucide="search"></i>Check a car</a>
+        <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================ HERO ============================ -->
+  <section class="hero" id="check">
+    <div class="wrap hero-in">
+      <div>
+        <div class="eyebrow"><i data-lucide="shield-check"></i> Check before you buy</div>
+        <span class="free-badge"><span class="dot"></span> Your first full report is FREE. No card needed.</span>
+        <h1>Know what a used car is<br /><span class="g">really worth</span> before you buy.</h1>
+        <p class="sub">
+          AnalyzeMyCar reads the factory build, the full MOT and service history, and an AI
+          condition check from photos, then tells you what the car is worth and what it will
+          cost to put right. Any UK car, by registration or VIN.
+        </p>
+        <div class="trust-row">
+          <span class="t"><i data-lucide="scan-search"></i> AI condition &amp; repair-cost check</span>
+          <span class="t"><i data-lucide="database"></i> Government &amp; OEM data</span>
+          <span class="t"><i data-lucide="zap"></i> Results in seconds</span>
+        </div>
+      </div>
+
+      <!-- conversion widget: reg / VIN toggle, matches the real product flow -->
+      <div class="lookup">
+        <h3>Start your free check</h3>
+        <p class="hint">Enter a reg or VIN, then build the report you want. Your first full report is free.</p>
+        <div class="toggle">
+          <button class="on" data-mode="reg">Registration</button>
+          <button data-mode="vin">VIN</button>
+        </div>
+        <div data-pane="reg">
+          <div class="plate">
+            <div class="gb">
+              <svg class="uj" viewBox="0 0 50 30"><clipPath id="ujh"><rect width="50" height="30" rx="2"/></clipPath><g clip-path="url(#ujh)"><rect width="50" height="30" fill="#012169"/><path d="M0,0 50,30 M50,0 0,30" stroke="#fff" stroke-width="6"/><path d="M0,0 50,30 M50,0 0,30" stroke="#C8102E" stroke-width="3.2"/><rect x="20" width="10" height="30" fill="#fff"/><rect y="10" width="50" height="10" fill="#fff"/><rect x="21.6" width="6.8" height="30" fill="#C8102E"/><rect y="11.6" width="50" height="6.8" fill="#C8102E"/></g></svg>
+              UK
+            </div>
+            <input type="text" maxlength="9" placeholder="LB21 KXV" aria-label="Vehicle registration" autocomplete="off" />
+          </div>
+        </div>
+        <div data-pane="vin" style="display:none">
+          <input class="vin-input" type="text" maxlength="17" placeholder="WVWZZZ1KZAW000000" aria-label="VIN" autocomplete="off" />
+        </div>
+        <div style="margin-top:18px">
+          <a class="btn btn-grad btn-lg btn-block" href="#"><i data-lucide="arrow-right"></i> Get my first report free</a>
+        </div>
+        <div class="reg-meta">
+          <span><i data-lucide="check" class="ic"></i> First report free</span>
+          <span><i data-lucide="check" class="ic"></i> No subscription</span>
+          <span><i data-lucide="check" class="ic"></i> Official UK data</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ SOURCE / TRUST STRIP (honest) ============================ -->
+  <section class="srcstrip">
+    <div class="wrap row">
+      <span class="s"><i data-lucide="landmark"></i> Official DVLA &amp; DVSA MOT data</span>
+      <span class="s"><i data-lucide="factory"></i> OEM build &amp; service data</span>
+      <span class="s"><i data-lucide="shield-check"></i> UK-registered company</span>
+      <span class="s"><i data-lucide="lock"></i> Secure checkout, 14-day refund</span>
+    </div>
+  </section>
+
+  <!-- ============================ DIFFERENTIATOR: THE MOAT ============================ -->
+  <section class="section">
+    <div class="wrap">
+      <div class="moat-grid">
+        <div class="moat-copy">
+          <span class="overline" style="text-align:left">The number that matters</span>
+          <h2>Most checks tell you the past.<br />We tell you the price.</h2>
+          <p>
+            Anyone can list a car's MOT history. AnalyzeMyCar goes further: our AI inspects the
+            car's condition from photos, itemises the repairs it needs with real parts and labour
+            costs, and adjusts the valuation accordingly. You don't just learn what the car
+            <em>was</em>. You learn what it's <strong>actually worth to you today</strong>.
+          </p>
+          <ul class="moat-list">
+            <li><i data-lucide="check-circle-2" class="ic"></i> Grade-based market valuation (clean, average, below average)</li>
+            <li><i data-lucide="check-circle-2" class="ic"></i> AI-itemised repair list: parts, labour hours, total cost</li>
+            <li><i data-lucide="check-circle-2" class="ic"></i> A refurb-adjusted "real value" you can negotiate with</li>
+            <li><i data-lucide="check-circle-2" class="ic"></i> 12 and 24-month value projections</li>
+          </ul>
+        </div>
+
+        <!-- Worked example from a real sample report (2017 VW Golf) -->
+        <div class="valcard">
+          <div class="vc-top">
+            <span class="veh">VW Golf VII 2.0 TDI, 2017</span>
+            <span class="grade">Grade C</span>
+          </div>
+          <div class="valrow">
+            <span class="lbl"><i data-lucide="tag" class="ic"></i> Market value (2026)</span>
+            <span class="num">£3,950</span>
+          </div>
+          <div class="valrow">
+            <span class="lbl"><i data-lucide="wrench" class="ic"></i> Refurb needed (AI assessed)</span>
+            <span class="num minus">&#8722;£1,759</span>
+          </div>
+          <div class="valrow final">
+            <span class="lbl"><i data-lucide="badge-check" class="ic"></i> Real value to you</span>
+            <span class="num">£2,191</span>
+          </div>
+          <div class="valnote">Illustrative figures from a sample AnalyzeMyCar report. Your report uses the live vehicle's data and photos.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ FEATURES (only what we deliver) ============================ -->
+  <section class="section section--soft" id="features">
+    <div class="wrap">
+      <span class="overline">One report, the whole picture</span>
+      <h2>Everything in one valuation report</h2>
+      <p class="lead">Build the report you want and pick the modules that matter. Your first full report is free (everything except the AI Visual Assessment).</p>
+      <div class="feat-grid">
+        <div class="feat">
+          <div class="fic"><i data-lucide="car-front"></i></div>
+          <h4>Vehicle overview</h4>
+          <p>Make, model, spec, colour, owner count and an A-C condition grade at a glance.</p>
+          <span class="cr">1 credit</span>
+        </div>
+        <div class="feat">
+          <div class="fic"><i data-lucide="file-clock"></i></div>
+          <h4>MOT &amp; mileage</h4>
+          <p>Every MOT test, advisory and failure, plus a mileage trend that flags clocking.</p>
+          <span class="cr">3 credits</span>
+        </div>
+        <div class="feat">
+          <div class="fic"><i data-lucide="wrench"></i></div>
+          <h4>Digital service book</h4>
+          <p>OEM-sourced service records: dates, mileage and the dealer who did the work.</p>
+          <span class="cr">3 credits</span>
+        </div>
+        <div class="feat">
+          <div class="fic"><i data-lucide="pound-sterling"></i></div>
+          <h4>Grade-based valuation</h4>
+          <p>Clean, average and below-average values by year, with 12 and 24-month projections.</p>
+          <span class="cr">2 credits</span>
+        </div>
+        <div class="feat">
+          <div class="fic"><i data-lucide="sliders-horizontal"></i></div>
+          <h4>Build sheet &amp; spec</h4>
+          <p>Factory equipment packages, dimensions, road tax, insurance group and performance.</p>
+          <span class="cr">2 credits</span>
+        </div>
+        <div class="feat paid">
+          <div class="fic"><i data-lucide="scan-search"></i></div>
+          <h4>AI visual assessment <span class="pill">Paid add-on</span></h4>
+          <p>AI inspects vehicle photos and itemises required repairs with parts, labour and cost.</p>
+          <span class="cr">4 credits</span>
+        </div>
+      </div>
+
+      <!--
+        OPTIONAL PROVENANCE BLOCK: DO NOT ENABLE UNTIL CONFIRMED.
+        The live site advertises "finance databases". The sample report does NOT show
+        finance / write-off / stolen markers, and the team is unsure they are delivered.
+        Left OUT until confirmed (see g-stack-research audit). When confirmed, add cards:
+          Outstanding finance · Insurance write-off (Cat S/N) · Stolen marker · Plate/keeper changes
+      -->
+    </div>
+  </section>
+
+  <!-- ============================ HOW IT WORKS ============================ -->
+  <section class="section" id="how">
+    <div class="wrap">
+      <span class="overline">How it works</span>
+      <h2>From reg to real value in three steps</h2>
+      <p class="lead">No subscription. Pay with credits, only for the checks you run.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="num">1</div>
+          <h4>Enter a reg or VIN</h4>
+          <p>Search any UK vehicle. We pull official DVLA, MOT and OEM data in seconds.</p>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <h4>Build your report</h4>
+          <p>Choose the modules you need: overview, MOT, service book, valuation, build sheet and AI condition. First full report free.</p>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <h4>Know the real price</h4>
+          <p>Walk into the deal knowing the car's true condition, its market value, and what it will cost to put right.</p>
+        </div>
+      </div>
+      <div style="text-align:center;margin-top:36px"><a class="btn btn-grad btn-lg" href="#check"><i data-lucide="arrow-right"></i> Check a car</a></div>
+    </div>
+  </section>
+
+  <!-- ============================ FOR DEALERS (trade wedge) ============================ -->
+  <section class="section section--soft" id="dealers">
+    <div class="wrap">
+      <div class="dealer">
+        <div>
+          <span class="overline" style="text-align:left;color:var(--brand-lime)">For dealers &amp; traders</span>
+          <h2>Know your margin before you buy the stock</h2>
+          <p>
+            You already have provenance covered. What you don't have is instant OEM spec,
+            AI-assessed condition and a refurb-adjusted valuation on every car you're sourcing.
+            That's the difference between a guess and a margin.
+          </p>
+          <ul class="dealer-list">
+            <li><i data-lucide="check-circle-2" class="ic"></i> Run condition and valuation on any car before you bid</li>
+            <li><i data-lucide="check-circle-2" class="ic"></i> AI repair-cost estimate becomes your reconditioning budget, instantly</li>
+            <li><i data-lucide="check-circle-2" class="ic"></i> OEM build and service history to price and list with confidence</li>
+            <li><i data-lucide="check-circle-2" class="ic"></i> Volume credit packs. The more you check, the less each costs.</li>
+          </ul>
+          <div class="dealer-cta">
+            <a class="btn btn-white btn-lg" href="#pricing"><i data-lucide="building-2"></i> See trade pricing</a>
+            <a class="btn btn-ghost-light btn-lg" href="#"><i data-lucide="phone"></i> Talk to us about volume</a>
+          </div>
+        </div>
+        <div class="valcard">
+          <div class="vc-top"><span class="veh">Forecourt sourcing</span><span class="grade">Per car</span></div>
+          <div class="valrow"><span class="lbl"><i data-lucide="gavel" class="ic"></i> Auction / trade price</span><span class="num">£6,900</span></div>
+          <div class="valrow"><span class="lbl"><i data-lucide="wrench" class="ic"></i> Recon (AI assessed)</span><span class="num minus">&#8722;£1,759</span></div>
+          <div class="valrow"><span class="lbl"><i data-lucide="tag" class="ic"></i> Retail-ready value</span><span class="num">£9,095</span></div>
+          <div class="valrow final"><span class="lbl"><i data-lucide="trending-up" class="ic"></i> Indicative margin</span><span class="num">£436</span></div>
+          <div class="valnote">Illustrative. Plug your own buy price into a live report to see the real margin before you commit.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ PRICING ============================ -->
+  <section class="section" id="pricing">
+    <div class="wrap">
+      <span class="overline">Simple credits</span>
+      <h2>Buy credits, use as needed</h2>
+      <p class="lead">No subscription. Your first full report is free. Top up with credits when you're checking more cars, and the more you buy, the more you save.</p>
+      <div class="price-grid">
+        <div class="pcard">
+          <div class="pname">Starter Pack</div>
+          <div class="pdesc">Perfect for checking a few vehicles</div>
+          <div class="pprice">£10 <span class="vat">+VAT</span></div>
+          <div class="punit">10 credits, £1.00 per credit</div>
+          <ul>
+            <li><i data-lucide="check" class="ic"></i> 10 credits</li>
+            <li><i data-lucide="check" class="ic"></i> Mix and match any checks</li>
+            <li><i data-lucide="check" class="ic"></i> Credits valid for 180 days</li>
+          </ul>
+          <a class="btn btn-secondary" href="#">Buy 10 credits</a>
+        </div>
+        <div class="pcard pop">
+          <span class="ptag">SAVE 15%</span>
+          <div class="pname">Popular Pack</div>
+          <div class="pdesc">Great for serious car buyers</div>
+          <div class="pprice"><span class="was">£40</span>£34 <span class="vat">+VAT</span></div>
+          <div class="punit">40 credits, £0.85 per credit</div>
+          <ul>
+            <li><i data-lucide="check" class="ic"></i> 40 credits</li>
+            <li><i data-lucide="check" class="ic"></i> Best for 4+ full reports</li>
+            <li><i data-lucide="check" class="ic"></i> Priority support</li>
+            <li><i data-lucide="check" class="ic"></i> Credits valid for 180 days</li>
+          </ul>
+          <a class="btn btn-grad" href="#">Buy 40 credits</a>
+        </div>
+        <div class="pcard">
+          <span class="ptag">BEST VALUE, 25% OFF</span>
+          <div class="pname">Pro Pack</div>
+          <div class="pdesc">Best value for dealers &amp; enthusiasts</div>
+          <div class="pprice"><span class="was">£100</span>£75 <span class="vat">+VAT</span></div>
+          <div class="punit">100 credits, £0.75 per credit</div>
+          <ul>
+            <li><i data-lucide="check" class="ic"></i> 100 credits</li>
+            <li><i data-lucide="check" class="ic"></i> Lowest price per check</li>
+            <li><i data-lucide="check" class="ic"></i> Bulk reporting</li>
+            <li><i data-lucide="check" class="ic"></i> Credits valid for 180 days</li>
+          </ul>
+          <a class="btn btn-secondary" href="#">Buy 100 credits</a>
+        </div>
+      </div>
+      <div class="price-foot">
+        <span><i data-lucide="lock" class="ic"></i> Secure payment</span>
+        <span><i data-lucide="clock" class="ic"></i> Credits valid 180 days</span>
+        <span><i data-lucide="rotate-ccw" class="ic"></i> 14-day refund window</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ TRUST (honest, no fabricated reviews/stats) ============================ -->
+  <section class="section section--soft">
+    <div class="wrap">
+      <span class="overline">Why you can trust the numbers</span>
+      <h2>Built on official data, run by a UK company</h2>
+      <p class="lead">No inflated claims. Here's exactly where the data comes from and who stands behind it.</p>
+      <div class="trust-grid">
+        <div class="trust-card"><i data-lucide="landmark"></i><h4>Official sources</h4><p>DVLA vehicle data and DVSA MOT records, straight from the source, not scraped.</p></div>
+        <div class="trust-card"><i data-lucide="factory"></i><h4>OEM build &amp; service</h4><p>Manufacturer build sheets and service history via AutoDAP's data network.</p></div>
+        <div class="trust-card"><i data-lucide="building-2"></i><h4>UK-registered company</h4><p>GATEWAY NINTEC UK LTD, London. VAT registered. Real company, real address.</p></div>
+        <div class="trust-card"><i data-lucide="rotate-ccw"></i><h4>Fair &amp; secure</h4><p>Secure checkout, transparent credit pricing, 14-day refund window.</p></div>
+      </div>
+
+      <!--
+        HONEST REVIEWS PLACEHOLDER. The previous site showed "4.9/5" and "50,000+ users" with
+        NO data behind them (owner-confirmed false) and they were removed. Do NOT add ratings,
+        counts, or testimonials until real and verifiable. When a Trustpilot profile is live,
+        paste the official TrustBox embed in place of this block.
+      -->
+      <div class="reviews-honest">
+        <div class="stars">★★★★★</div>
+        <h4>We're newly launched in the UK</h4>
+        <p>We show real customer reviews only, and we'd rather show none than fake any. As verified reviews come in, they'll appear here. For a trust product, that's the only way that makes sense.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ FAQ ============================ -->
+  <section class="section">
+    <div class="wrap">
+      <span class="overline">FAQ</span>
+      <h2>Frequently asked questions</h2>
+      <div class="faq" style="margin-top:36px">
+        <details open>
+          <summary>Is the first report really free?</summary>
+          <div class="faq-body">Yes. Your first full report is free and includes everything except the AI Visual Assessment: vehicle overview, MOT and mileage, digital service book, grade-based valuation and the build sheet. No card needed to run it.</div>
+        </details>
+        <details>
+          <summary>What does AnalyzeMyCar actually check?</summary>
+          <!-- KEEP THIS HONEST: list only delivered modules. Do not add finance/write-off/stolen
+               here until the product team confirms they are delivered. -->
+          <div class="faq-body">Vehicle overview and A-C condition grade, full MOT and mileage history (with clocking flags), OEM digital service book, factory build sheet and spec, a grade-based market valuation with projections, and an AI visual condition assessment with itemised repair costs. Over 1,000 data points from DVLA, DVSA and OEM sources.</div>
+        </details>
+        <details>
+          <summary>How do credits work?</summary>
+          <div class="faq-body">After your free report, additional checks use credits: Vehicle overview (1), Grade-based valuation (2), Build sheet (2), MOT and mileage (3), Digital service book (3), AI Visual Assessment (4), or a Full Report (10). Buy a pack once and spend it across as many cars as you like.</div>
+        </details>
+        <details>
+          <summary>Do credits expire?</summary>
+          <div class="faq-body">Yes. Your credits expire 180 days after purchase, so be sure to use them before they expire.</div>
+        </details>
+        <details>
+          <summary>Can I get a refund?</summary>
+          <div class="faq-body">Yes. Unused credits can be refunded within 14 days; used credits are charged at £1 each. VAT is non-refundable, and refunds are processed within 5 to 10 business days.</div>
+        </details>
+        <details>
+          <summary>Do you cover imported and European cars?</summary>
+          <div class="faq-body">AnalyzeMyCar is built on AutoDAP's European OEM data network, so we surface factory build and service detail many UK-only checks miss. Coverage depends on the vehicle and its country of origin. Run a free report to see what's available for yours.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ CTA BAND ============================ -->
+  <section class="section">
+    <div class="wrap">
+      <div class="cta-band">
+        <h2>Don't guess what a car's worth. Know.</h2>
+        <p>Run your first full AnalyzeMyCar report free, before you hand over a penny.</p>
+        <a class="btn btn-white btn-lg" href="#check"><i data-lucide="search"></i> Check a car</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ FOOTER ============================ -->
+  <footer class="ftr">
+    <div class="wrap ftr-in">
+      <div>
+        <span class="ftr-chip"><img src="assets/logo-full.png" alt="AnalyzeMyCar" /></span>
+        <p>Know what a used car is really worth: factory build, full history, AI condition and a grade-based valuation. Any UK car, by reg or VIN. A product of AutoDAP B.V.</p>
+        <div class="ftr-social">
+          <span title="Facebook">f</span><span title="LinkedIn">in</span><span title="X">X</span><span title="YouTube">▶</span>
+        </div>
+      </div>
+      <div>
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="#check">Check a car</a></li>
+          <li><a href="#features">What's checked</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#dealers">For dealers</a></li>
+          <li><a href="#">Sample report</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="#">Privacy policy</a></li>
+          <li><a href="#">Terms &amp; conditions</a></li>
+          <li><a href="#">Refund policy</a></li>
+          <li><a href="mailto:info@analyzemycar.com">info@analyzemycar.com</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#">About AutoDAP</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="wrap ftr-bot">
+      <span>© 2026 AnalyzeMyCar, GATEWAY NINTEC UK LTD. All rights reserved.</span>
+      <span>Powered by AutoDAP B.V. · VAT 385519364 · 265-269 Kingston Road, London SW19 3NW 🇬🇧</span>
+    </div>
+  </footer>
+
+  <!-- icons + minimal interactivity (reg/VIN toggle) -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script>
+    if (window.lucide) lucide.createIcons();
+    document.querySelectorAll('.toggle button').forEach(function(b){
+      b.addEventListener('click', function(){
+        document.querySelectorAll('.toggle button').forEach(function(x){x.classList.remove('on')});
+        b.classList.add('on');
+        var mode = b.getAttribute('data-mode');
+        document.querySelector('[data-pane="reg"]').style.display = mode === 'reg' ? '' : 'none';
+        document.querySelector('[data-pane="vin"]').style.display = mode === 'vin' ? '' : 'none';
+      });
+    });
+  </script>
+</body>
+</html>

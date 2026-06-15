@@ -1,0 +1,12 @@
+# Dev artifacts — not part of the deployable site
+screenshot-*.jpg
+screenshot-*.png
+screenshot*.cjs
+screenshot*.mjs
+*.local.*
+
+# Tooling
+node_modules/
+.DS_Store
+Thumbs.db
+.vercel
