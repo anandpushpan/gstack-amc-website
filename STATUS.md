@@ -4,7 +4,7 @@
 then `README.md` for the full version history. It tells you what is done, what is
 planned, and what is deliberately on hold.
 
-**Current version: v2.1** (2026-06-13) · Status: draft, not yet wired to a backend.
+**Current version: v2.2** (2026-06-13) · Status: draft, not yet wired to a backend.
 
 ---
 
@@ -66,14 +66,25 @@ credit model are all in place. The legal pages are drafted but NOT yet reviewed 
 
 ## NEEDS REVIEW (drafted, not cleared for launch)
 
-The Privacy / Terms / Refund pages (`privacy.html`, `terms.html`, `refund.html`)
-are working drafts. Each shows a "Draft, pending legal review" banner and uses
-`[TO CONFIRM]` markers for unverified items. **A qualified adviser must review
-them before launch.** Outstanding items:
-- **Privacy:** ICO registration number, payment processor, sub-processors / hosting,
-  data retention periods, cookie list, transfer safeguards.
-- **Terms:** liability cap and exclusions, dispute resolution.
-- **Refund:** exact statutory cancellation wording for digital content.
+The Privacy / Terms / Refund pages were reconciled against the live site in v2.2,
+which closed most open items. Each still shows a "Draft, pending legal review"
+banner. **A qualified adviser must sign off before launch.** Remaining open items:
+- **Privacy (7 `[TO CONFIRM]`):** ICO registration number, named payment
+  processor, named hosting / sub-processors, full cookie list.
+- **Terms:** no open markers; have an adviser confirm the liability cap and
+  data-usage clauses fit your licences.
+- **Refund:** no open markers; have an adviser confirm the statutory cancellation wording.
+
+**Decisions locked in v2.2** (so nobody re-litigates them):
+- Credits expire **180 days** after purchase (our position; the live Terms say
+  no-expiry and are out of date, they should be updated to match us).
+- We deliberately do **not** claim finance / write-off / stolen data until the
+  product is confirmed to deliver it.
+- Legal pages use **support@analyzemycar.com** and **14 business days** for refunds.
+
+**Cross-page mismatch to fix:** the homepage FAQ/footer still use
+info@analyzemycar.com and "5 to 10 business days"; the legal pages use support@
+and 14 business days. Align the homepage once the canonical contact is confirmed.
 
 ## PLANNED (next, not started)
 
