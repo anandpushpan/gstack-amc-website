@@ -4,7 +4,7 @@
 then `README.md` for the full version history. It tells you what is done, what is
 planned, and what is deliberately on hold.
 
-**Current version: v2.3** (2026-06-13) · Status: draft, not yet wired to a backend.
+**Current version: v2.4** (2026-06-13) · Status: draft, not yet wired to a backend.
 
 ---
 
