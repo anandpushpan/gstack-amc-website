@@ -4,7 +4,7 @@
 then `README.md` for the full version history. It tells you what is done, what is
 planned, and what is deliberately on hold.
 
-**Current version: v2.0** (2026-06-13) · Status: draft, not yet wired to a backend.
+**Current version: v2.1** (2026-06-13) · Status: draft, not yet wired to a backend.
 
 ---
 
@@ -58,15 +58,29 @@ Credits expire 180 days after purchase. First report free for everything except 
 | v1.6 | Design-review pass: restored white/soft section alternation; tightened the H3 type scale. |
 | v1.7 | Module picker moved into the hero (interactive, with a live "your free report" summary). |
 | v2.0 | Mobile-first overhaul: action-first hero, one-tap free report, sticky thumb-zone CTA, input ergonomics + 44px touch targets, dealer band below the consumer flow on mobile, 4G perf. Desktop unchanged. |
+| v2.1 | Added Privacy, Terms and Refund pages (drafts) on a shared `assets/legal.css`; wired the homepage footer links. |
 
-**Where the site stands:** a complete, honest, mobile-first marketing homepage draft.
-Visuals, copy, structured data, responsive behaviour and the credit model are all in place.
+**Where the site stands:** a complete, honest, mobile-first marketing homepage plus
+draft legal pages. Visuals, copy, structured data, responsive behaviour and the
+credit model are all in place. The legal pages are drafted but NOT yet reviewed (see below).
+
+## NEEDS REVIEW (drafted, not cleared for launch)
+
+The Privacy / Terms / Refund pages (`privacy.html`, `terms.html`, `refund.html`)
+are working drafts. Each shows a "Draft, pending legal review" banner and uses
+`[TO CONFIRM]` markers for unverified items. **A qualified adviser must review
+them before launch.** Outstanding items:
+- **Privacy:** ICO registration number, payment processor, sub-processors / hosting,
+  data retention periods, cookie list, transfer safeguards.
+- **Terms:** liability cap and exclusions, dispute resolution.
+- **Refund:** exact statutory cancellation wording for digital content.
 
 ## PLANNED (next, not started)
 
 - **Wire up the backend.** All CTAs are placeholders (`href="#"`). Needed: reg/VIN
-  lookup endpoint, free-account signup + report flow, "Buy credits" checkout, and
-  real Privacy / Terms / Refund pages.
+  lookup endpoint, free-account signup + report flow, "Buy credits" checkout.
+  (Privacy / Terms / Refund pages now exist as drafts, see NEEDS REVIEW above.)
+- **Other footer pages still missing:** Sample report, About, Contact, Blog.
 - **OG share image** (1200x630) for link previews before launch.
 - **v2.1: dealer-band placement on mobile.** It currently lands after the final
   CTA (via CSS flex order). Revisit whether it belongs higher in the mobile flow.
